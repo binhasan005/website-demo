@@ -21,17 +21,17 @@
 
 body{
   background:#000;
-  color:#7E3D87;
+  color:#B56EDC;
 }
 
 a{
   text-decoration:none;
-  color:#7E3D87;
+  color:#B56EDC;
   transition:.3s;
 }
 
 a:hover{
-  color:#C17BC3;
+  color:#D8A8F0;
 }
 
 img{
@@ -39,8 +39,7 @@ img{
   display:block;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 header{
   position:sticky;
   top:0;
@@ -50,7 +49,7 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:15px 50px;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.8);
   backdrop-filter:blur(8px);
 }
 
@@ -72,7 +71,7 @@ header{
 
 .logo-text p{
   font-size:0.75rem;
-  color:#A152B1;
+  color:#D8A8F0;
 }
 
 nav{
@@ -87,11 +86,10 @@ nav a{
 }
 
 nav a:hover{
-  background:rgba(161,82,177,0.2);
+  background:rgba(181,110,220,0.2);
 }
 
-/* ================= HERO & SLIDES ================= */
-
+/* HERO & ABOUT SLIDES */
 .hero, .jeddah-section{
   position:relative;
   height:100vh;
@@ -106,7 +104,7 @@ nav a:hover{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
   z-index:1;
 }
 
@@ -140,7 +138,7 @@ nav a:hover{
   font-family:'Montserrat',sans-serif;
   font-size:2.5rem;
   margin-bottom:20px;
-  text-shadow:2px 2px 10px rgba(0,0,0,0.8);
+  text-shadow:2px 2px 15px rgba(0,0,0,0.8);
 }
 
 .hero p, .jeddah-section p{
@@ -161,19 +159,18 @@ nav a:hover{
 }
 
 .btn:hover{
-  background:#C17BC3;
+  background:#D8A8F0;
 }
 
-/* ================= VIDEOS ================= */
-
+/* REELS */
 .videos{
-  padding:70px 20px;
+  padding:80px 20px;
   text-align:center;
 }
 
 .videos h2{
   margin-bottom:40px;
-  color:#A152B1;
+  color:#D8A8F0;
 }
 
 .video-grid{
@@ -186,7 +183,7 @@ nav a:hover{
   background:#111;
   border-radius:10px;
   overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,0.5);
+  box-shadow:0 5px 15px rgba(0,0,0,0.6);
 }
 
 .video-item iframe{
@@ -199,10 +196,9 @@ nav a:hover{
   font-weight:600;
 }
 
-/* ================= BLOG ================= */
-
+/* BLOG */
 .blog{
-  padding:70px 20px;
+  padding:80px 20px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:20px;
@@ -224,8 +220,7 @@ nav a:hover{
   margin-bottom:10px;
 }
 
-/* ================= CONTACT ================= */
-
+/* CONTACT */
 .contact{
   padding:80px 20px;
   text-align:center;
@@ -235,58 +230,72 @@ nav a:hover{
   margin-bottom:30px;
 }
 
+.contact-form{
+  max-width:500px;
+  margin:30px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:14px;
+  border-radius:6px;
+  border:1px solid #A152B1;
+  background:#111;
+  color:#B56EDC;
+  font-size:0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#D8A8F0;
+}
+
 .contact-btn{
-  display:inline-block;
-  padding:15px 35px;
+  padding:15px;
   background:#A152B1;
   color:#000;
   font-weight:600;
+  border:none;
   border-radius:6px;
+  cursor:pointer;
   transition:.3s;
 }
 
 .contact-btn:hover{
-  background:#C17BC3;
+  background:#D8A8F0;
 }
 
-.contact p{
-  margin-top:20px;
-}
-
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px 20px;
   background:#000;
-  color:#7E3D87;
+  color:#B56EDC;
 }
 
-/* ================= RESPONSIVE ================= */
-
+/* RESPONSIVE */
 @media(max-width:768px){
-
   header{
     flex-direction:column;
     gap:15px;
   }
-
   nav{
     flex-wrap:wrap;
     justify-content:center;
   }
-
   .hero h2, .jeddah-section h2{
     font-size:1.8rem;
   }
-
 }
 
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo-area">
     <img src="https://i.imgur.com/SzHFDmO.png" alt="Logo">
@@ -304,7 +313,6 @@ footer{
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="slides">
     <img src="https://images.unsplash.com/photo-1663900108404-a05e8bf82cda?q=80&w=1374&auto=format&fit=crop" class="active">
@@ -312,12 +320,11 @@ footer{
   </div>
   <div class="content">
     <h2>Learn, Invest & Grow in Saudi Real Estate</h2>
-    <p>Stay updated with property news, investment strategies, and ROI insights.</p>
+    <p>Stay updated with property news and ROI strategies.</p>
     <a href="#contact" class="btn">Get in Touch</a>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="jeddah-section" id="jeddah">
   <div class="slides">
     <img src="https://images.unsplash.com/photo-1585085952480-811ff8859fa1?q=80&w=1335&auto=format&fit=crop" class="active">
@@ -325,44 +332,48 @@ footer{
   </div>
   <div class="content">
     <h2>About Bin Hasan</h2>
-    <p>Guiding investors in Saudi real estate with market insights and property strategies.</p>
+    <p>Guiding investors with trusted Saudi property insights.</p>
   </div>
 </section>
 
-<!-- REELS -->
 <section class="videos" id="reels">
   <h2>Watch Latest Property Reels</h2>
   <div class="video-grid">
     <div class="video-item">
-      <iframe src="https://www.instagram.com/reel/REPLACE_WITH_LINK/embed" frameborder="0"></iframe>
+      <iframe src="https://www.instagram.com/reel/REPLACE_LINK/embed"></iframe>
       <p>Riyadh Investment Tips</p>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
 <section class="blog" id="blog">
   <div class="blog-item">
     <h3>How to Buy Freehold Property in Saudi</h3>
-    <p>Complete guide for investors.</p>
+    <p>Complete investor guide.</p>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <h2>Contact Bin Hasan</h2>
-  <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="contact-btn">
-    Fill Google Contact Form
-  </a>
-  <p>Or reach via <a href="https://www.instagram.com/realestate_with_binhasan/" target="_blank">Instagram</a></p>
+
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="contact-form">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit" class="contact-btn">Send Message</button>
+  </form>
+
+  <p style="margin-top:20px;">
+    Or reach via 
+    <a href="https://www.instagram.com/realestate_with_binhasan/" target="_blank">Instagram</a>
+  </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
   &copy; 2026 Bin Hasan | All Rights Reserved
 </footer>
 
-<!-- SLIDESHOW SCRIPT -->
 <script>
 const slideshows = document.querySelectorAll('.slides');
 
