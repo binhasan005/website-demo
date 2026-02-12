@@ -3,175 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Brand Name</title>
+<meta name="description" content="Bin Hasan - Saudi Real Estate Guides & Investment Tips">
+<title>Bin Hasan</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --purple: #6a0dad;
-  --gold: #d4af37;
-  --black: #0f0f0f;
+:root{
+  --purple:#7E3D87;
+  --purple-light:#A152B1;
+  --gold:#D4AF37;
+  --gold-light:#F1D27A;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Open Sans',sans-serif;
+  scroll-behavior:smooth;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--black);
-  color: var(--gold);
+body{
+  background:#000;
+  color:var(--gold);
 }
 
-/* HEADER */
-header {
-  position: fixed;
-  width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0,0,0,0.8);
-  z-index: 1000;
+a{text-decoration:none;color:var(--purple);transition:.3s;}
+a:hover{color:var(--gold-light);}
+img{max-width:100%;display:block;}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  backdrop-filter:blur(8px);
+  background:rgba(0,0,0,0.7);
+  padding:25px;
+  text-align:center;
 }
 
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  color: var(--purple);
-  font-weight: 700;
+header img{
+  width:170px;   /* Bigger logo */
+  margin-bottom:15px;
 }
 
-nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: var(--purple);
-  font-weight: 500;
+header h1{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:2.5rem;
+  color:var(--purple);
 }
 
-nav a:hover {
-  color: var(--gold);
+header p{
+  font-size:1.1rem;
+  color:var(--purple);
 }
 
-/* HERO SLIDESHOW */
-.hero {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+nav{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:15px;
 }
 
-.slides {
-  display: flex;
-  width: 300%;
-  height: 100%;
-  animation: slide 15s infinite;
+nav a{
+  font-weight:600;
+  padding:6px 12px;
+  border-radius:6px;
 }
 
-.slides img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
+nav a:hover{
+  background:rgba(212,175,55,0.2);
 }
 
-@keyframes slide {
-  0% { transform: translateX(0%); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
+/* Hero & Jeddah */
+.hero,.jeddah-section{
+  position:relative;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: var(--purple);
+.hero::before,.jeddah-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+  z-index:1;
 }
 
-.hero-content h1 {
-  font-size: 60px;
-  font-family: 'Playfair Display', serif;
+.slides{
+  position:absolute;
+  inset:0;
+  z-index:0;
 }
 
-.hero-content p {
-  margin-top: 20px;
-  font-size: 20px;
+.slides img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 2s ease-in-out, transform 5s ease;
 }
 
-/* SECTIONS */
-section {
-  padding: 100px 80px;
+.slides img.active{
+  opacity:1;
+  transform:scale(1.05);
 }
 
-.section-title {
-  font-size: 40px;
-  margin-bottom: 40px;
-  color: var(--purple);
-  font-family: 'Playfair Display', serif;
+.content{
+  position:relative;
+  z-index:2;
+  padding:0 20px;
 }
 
-/* ABOUT */
-.about p {
-  max-width: 800px;
-  line-height: 1.8;
+.hero h2,.jeddah-section h2{
+  font-size:2.7rem;
+  font-family:'Montserrat',sans-serif;
+  margin-bottom:15px;
+  color:var(--purple);
 }
 
-/* REELS */
-.reels-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 30px;
+.hero p,.jeddah-section p{
+  max-width:650px;
+  margin:0 auto 25px;
+  font-size:1.2rem;
 }
 
-.reels-container iframe {
-  width: 100%;
-  height: 400px;
-  border-radius: 10px;
+.btn{
+  background:var(--gold);
+  color:#000;
+  font-weight:600;
+  padding:12px 30px;
+  border-radius:6px;
+  transition:.3s;
 }
 
-/* CONTACT */
-.contact form {
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
+.btn:hover{
+  background:var(--gold-light);
 }
 
-.contact input,
-.contact textarea {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: none;
-  background: #1a1a1a;
-  color: var(--gold);
-  border: 1px solid var(--gold);
+/* Reels Section */
+.videos{
+  padding:80px 20px;
 }
 
-.contact button {
-  padding: 15px;
-  background: var(--gold);
-  color: black;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
+.videos h2{
+  text-align:center;
+  margin-bottom:50px;
+  color:var(--purple);
+  font-family:'Montserrat',sans-serif;
 }
 
-.contact button:hover {
-  background: var(--purple);
-  color: white;
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  background: #000;
-  color: var(--gold);
+.video-item{
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 20px rgba(212,175,55,0.2);
+  transition:.3s;
+}
+
+.video-item:hover{
+  transform:translateY(-8px);
+}
+
+.video-item iframe{
+  width:100%;
+  height:350px;
+}
+
+.video-item p{
+  color:var(--purple);
+  text-align:center;
+  padding:12px;
+  font-weight:600;
+}
+
+/* Blog */
+.blog{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  padding:80px 20px;
+}
+
+.blog-item{
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(212,175,55,0.3);
+  transition:.3s;
+}
+
+.blog-item:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold);
+}
+
+.blog-item h3{
+  font-family:'Montserrat',sans-serif;
+  margin-bottom:10px;
+  color:var(--purple);
+}
+
+/* Contact */
+.contact{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.contact h2{
+  color:var(--purple);
+  margin-bottom:30px;
+}
+
+.contact form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  max-width:500px;
+  margin:auto;
+}
+
+.contact input,.contact textarea{
+  padding:14px;
+  border:1px solid var(--gold);
+  border-radius:6px;
+  background:#111;
+  color:var(--gold);
+}
+
+.contact button{
+  padding:14px;
+  background:var(--gold);
+  color:#000;
+  font-weight:600;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.contact button:hover{
+  background:var(--gold-light);
+}
+
+/* Footer */
+footer{
+  background:#000;
+  color:var(--gold);
+  text-align:center;
+  padding:25px;
+}
+
+/* Scroll Animation */
+.fade-in{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:768px){
+  .hero h2,.jeddah-section h2{font-size:1.8rem;}
 }
 </style>
 </head>
@@ -179,61 +292,113 @@ footer {
 <body>
 
 <header>
-  <div class="logo">Your Logo Name</div>
+  <img src="https://i.imgur.com/SzHFDmO.png" alt="Logo">
+  <h1>Bin Hasan</h1>
+  <p>Simplifying Saudi Real Estate for Investors</p>
   <nav>
-    <a href="#about">About</a>
+    <a href="#jeddah">About</a>
     <a href="#reels">Reels</a>
+    <a href="#blog">Guides</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero">
   <div class="slides">
-    <img src="image1.jpg">
-    <img src="image2.jpg">
-    <img src="image3.jpg">
+    <img src="https://images.unsplash.com/photo-1663900108404-a05e8bf82cda?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0" class="active">
+    <img src="https://images.unsplash.com/photo-1676055003135-489fda067670?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0">
   </div>
-  <div class="hero-content">
-    <h1>Luxury Real Estate Advisory</h1>
-    <p>Elevating your property investments with expertise & elegance</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about">
-  <h2 class="section-title">About</h2>
-  <p>
-    We provide elite real estate advisory services with a focus on luxury,
-    premium investments and strategic property growth.
-  </p>
-</section>
-
-<!-- REELS -->
-<section id="reels">
-  <h2 class="section-title">Featured Reels</h2>
-  <div class="reels-container">
-    <iframe src="https://www.instagram.com/reel/REEL_LINK/embed"></iframe>
-    <iframe src="https://www.instagram.com/reel/REEL_LINK/embed"></iframe>
+  <div class="content fade-in">
+    <h2>Learn, Invest & Grow in Saudi Real Estate</h2>
+    <p>Stay updated with property news, investment tips, and ROI insights.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2 class="section-title">Contact Us</h2>
+<!-- About -->
+<section class="jeddah-section" id="jeddah">
+  <div class="slides">
+    <img src="https://images.unsplash.com/photo-1585085952480-811ff8859fa1?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0" class="active">
+    <img src="https://images.unsplash.com/photo-1674979724572-c0a0579bc9d0?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.1.0">
+  </div>
+  <div class="content fade-in">
+    <h2>About Bin Hasan</h2>
+    <p>Guiding investors with market insights, strategies & daily updates.</p>
+  </div>
+</section>
 
-  <form action="https://docs.google.com/forms/d/e/your-google-form-action-link/formResponse" method="POST" target="_blank">
-    <input type="text" name="entry.123456789" placeholder="Your Name" required>
-    <input type="email" name="entry.987654321" placeholder="Your Email" required>
-    <textarea name="entry.456789123" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Submit</button>
+<!-- Reels -->
+<section class="videos fade-in" id="reels">
+  <h2>Watch Latest Property Reels</h2>
+  <div class="video-grid">
+    <div class="video-item">
+      <iframe src="https://www.instagram.com/reel/REPLACE_WITH_REAL_REEL_LINK/embed"></iframe>
+      <p>Riyadh Downtown Investment Tips</p>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.instagram.com/reel/REPLACE_WITH_REAL_REEL_LINK/embed"></iframe>
+      <p>Jeddah Corniche Update</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="blog fade-in" id="blog">
+  <div class="blog-item">
+    <h3>How to Buy Freehold Property</h3>
+    <p>Steps & regulations for foreign investors.</p>
+  </div>
+  <div class="blog-item">
+    <h3>Top Rental Yields</h3>
+    <p>Best areas for high ROI in Saudi.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact fade-in" id="contact">
+  <h2>Contact Bin Hasan</h2>
+
+  <!-- CONNECT THIS TO YOUR GOOGLE FORM -->
+  <form action="YOUR_GOOGLE_FORM_ACTION_LINK" method="POST" target="_blank">
+    <input type="text" name="entry.XXXX" placeholder="Your Name" required>
+    <input type="email" name="entry.XXXX" placeholder="Your Email" required>
+    <textarea name="entry.XXXX" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
   </form>
 
 </section>
 
 <footer>
-  © 2026 Your Brand Name. All Rights Reserved.
+  © 2026 Bin Hasan | All Rights Reserved
 </footer>
+
+<script>
+/* Slideshow */
+const slideshows=[
+  document.querySelectorAll('.hero .slides img'),
+  document.querySelectorAll('.jeddah-section .slides img')
+];
+
+setInterval(()=>{
+  slideshows.forEach(show=>{
+    let current=[...show].findIndex(img=>img.classList.contains('active'));
+    show[current].classList.remove('active');
+    current=(current+1)%show.length;
+    show[current].classList.add('active');
+  });
+},4000);
+
+/* Scroll Fade */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
