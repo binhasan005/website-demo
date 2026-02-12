@@ -37,7 +37,7 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:20px 60px;
-  background:rgba(0,0,0,0.8);
+  background:rgba(0,0,0,0.85);
   backdrop-filter:blur(8px);
 }
 
@@ -49,11 +49,6 @@ header{
 
 .logo-area img{
   width:160px;
-}
-
-.brand-text{
-  display:flex;
-  flex-direction:column;
 }
 
 .brand-text h1{
@@ -75,14 +70,13 @@ nav{
 nav a{
   color:var(--purple);
   font-weight:600;
-  transition:.3s;
 }
 
 nav a:hover{
   color:var(--gold-light);
 }
 
-/* HERO & ABOUT */
+/* HERO + ABOUT */
 .hero,.jeddah-section{
   position:relative;
   height:100vh;
@@ -104,7 +98,6 @@ nav a:hover{
 .slides{
   position:absolute;
   inset:0;
-  z-index:0;
 }
 
 .slides img{
@@ -129,10 +122,10 @@ nav a:hover{
 }
 
 .hero h2,.jeddah-section h2{
-  font-size:2.7rem;
+  font-size:2.5rem;
   font-family:'Montserrat',sans-serif;
-  margin-bottom:15px;
   color:var(--gold);
+  margin-bottom:15px;
 }
 
 .hero p,.jeddah-section p{
@@ -267,14 +260,10 @@ footer{
   color:var(--gold);
 }
 
-/* Responsive */
 @media(max-width:768px){
   header{
     flex-direction:column;
     gap:15px;
-  }
-  .hero h2,.jeddah-section h2{
-    font-size:1.8rem;
   }
 }
 </style>
@@ -307,17 +296,60 @@ footer{
   </div>
   <div class="content">
     <h2>Learn, Invest & Grow in Saudi Real Estate</h2>
-    <p>Stay updated with property news, investment tips, and ROI insights.</p>
+    <p>Stay updated with property news and investment strategies.</p>
     <a href="#contact" class="btn">Get in Touch</a>
   </div>
 </section>
 
-<!-- Keep rest of your sections SAME as before -->
+<!-- Reels -->
+<section class="videos" id="reels">
+  <h2>Watch Latest Property Reels</h2>
+  <div class="video-grid">
+    <div class="video-item">
+      <iframe src="https://www.instagram.com/reel/REPLACE_REAL_LINK/embed"></iframe>
+      <p>Riyadh Investment Tips</p>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.instagram.com/reel/REPLACE_REAL_LINK/embed"></iframe>
+      <p>Jeddah Market Update</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="blog" id="blog">
+  <div class="blog-item">
+    <h3>How to Buy Freehold Property</h3>
+    <p>Steps & regulations for foreign investors.</p>
+  </div>
+  <div class="blog-item">
+    <h3>Top Rental Yield Areas</h3>
+    <p>Best cities and zones for strong ROI.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <h2>Contact Bin Hasan</h2>
+
+  <!-- Replace your email below -->
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+</section>
+
+<footer>
+  © 2026 Bin Hasan | All Rights Reserved
+</footer>
 
 <script>
 const slideshows=[
-  document.querySelectorAll('.hero .slides img'),
-  document.querySelectorAll('.jeddah-section .slides img')
+  document.querySelectorAll('.hero .slides img')
 ];
 
 setInterval(()=>{
