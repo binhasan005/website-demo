@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bin Hasan - Saudi Real Estate Guides & Investment Tips">
 <title>Bin Hasan</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -11,7 +10,6 @@
 <style>
 :root{
   --purple:#7E3D87;
-  --purple-light:#A152B1;
   --gold:#D4AF37;
   --gold-light:#F1D27A;
 }
@@ -29,61 +27,62 @@ body{
   color:var(--gold);
 }
 
-a{text-decoration:none;color:var(--purple);transition:.3s;}
-a:hover{color:var(--gold-light);}
-img{max-width:100%;display:block;}
-
-/* Header */
+/* HEADER */
 header{
   position:sticky;
   top:0;
   width:100%;
   z-index:1000;
   display:flex;
-  flex-direction:column;
+  justify-content:space-between;
   align-items:center;
+  padding:20px 60px;
+  background:rgba(0,0,0,0.8);
   backdrop-filter:blur(8px);
-  background:rgba(0,0,0,0.7);
-  padding:25px;
-  text-align:center;
 }
 
-header img{
-  width:170px;   /* Bigger logo */
-  margin-bottom:15px;
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-header h1{
+.logo-area img{
+  width:160px;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.brand-text h1{
   font-family:'Montserrat',sans-serif;
-  font-weight:700;
-  font-size:2.5rem;
+  font-size:2rem;
   color:var(--purple);
 }
 
-header p{
-  font-size:1.1rem;
+.brand-text p{
+  font-size:0.9rem;
   color:var(--purple);
 }
 
 nav{
   display:flex;
-  justify-content:center;
   gap:25px;
-  flex-wrap:wrap;
-  margin-top:15px;
 }
 
 nav a{
+  color:var(--purple);
   font-weight:600;
-  padding:6px 12px;
-  border-radius:6px;
+  transition:.3s;
 }
 
 nav a:hover{
-  background:rgba(212,175,55,0.2);
+  color:var(--gold-light);
 }
 
-/* Hero & Jeddah */
+/* HERO & ABOUT */
 .hero,.jeddah-section{
   position:relative;
   height:100vh;
@@ -133,7 +132,7 @@ nav a:hover{
   font-size:2.7rem;
   font-family:'Montserrat',sans-serif;
   margin-bottom:15px;
-  color:var(--purple);
+  color:var(--gold);
 }
 
 .hero p,.jeddah-section p{
@@ -145,8 +144,8 @@ nav a:hover{
 .btn{
   background:var(--gold);
   color:#000;
-  font-weight:600;
   padding:12px 30px;
+  font-weight:600;
   border-radius:6px;
   transition:.3s;
 }
@@ -155,15 +154,15 @@ nav a:hover{
   background:var(--gold-light);
 }
 
-/* Reels Section */
+/* REELS */
 .videos{
-  padding:80px 20px;
+  padding:80px 60px;
 }
 
 .videos h2{
   text-align:center;
   margin-bottom:50px;
-  color:var(--purple);
+  color:var(--gold);
   font-family:'Montserrat',sans-serif;
 }
 
@@ -190,18 +189,18 @@ nav a:hover{
 }
 
 .video-item p{
-  color:var(--purple);
-  text-align:center;
+  color:var(--gold);
   padding:12px;
+  text-align:center;
   font-weight:600;
 }
 
-/* Blog */
+/* BLOG */
 .blog{
+  padding:80px 60px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
-  padding:80px 20px;
 }
 
 .blog-item{
@@ -213,33 +212,32 @@ nav a:hover{
 }
 
 .blog-item:hover{
-  transform:translateY(-8px);
   border-color:var(--gold);
+  transform:translateY(-8px);
 }
 
 .blog-item h3{
+  color:var(--gold);
   font-family:'Montserrat',sans-serif;
-  margin-bottom:10px;
-  color:var(--purple);
 }
 
-/* Contact */
+/* CONTACT */
 .contact{
-  padding:80px 20px;
+  padding:80px 60px;
   text-align:center;
 }
 
 .contact h2{
-  color:var(--purple);
+  color:var(--gold);
   margin-bottom:30px;
 }
 
 .contact form{
+  max-width:500px;
+  margin:auto;
   display:flex;
   flex-direction:column;
   gap:15px;
-  max-width:500px;
-  margin:auto;
 }
 
 .contact input,.contact textarea{
@@ -263,28 +261,21 @@ nav a:hover{
   background:var(--gold-light);
 }
 
-/* Footer */
 footer{
-  background:#000;
-  color:var(--gold);
   text-align:center;
   padding:25px;
+  color:var(--gold);
 }
 
-/* Scroll Animation */
-.fade-in{
-  opacity:0;
-  transform:translateY(30px);
-  transition:1s ease;
-}
-
-.fade-in.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
+/* Responsive */
 @media(max-width:768px){
-  .hero h2,.jeddah-section h2{font-size:1.8rem;}
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+  .hero h2,.jeddah-section h2{
+    font-size:1.8rem;
+  }
 }
 </style>
 </head>
@@ -292,9 +283,14 @@ footer{
 <body>
 
 <header>
-  <img src="https://i.imgur.com/SzHFDmO.png" alt="Logo">
-  <h1>Bin Hasan</h1>
-  <p>Simplifying Saudi Real Estate for Investors</p>
+  <div class="logo-area">
+    <img src="https://i.imgur.com/SzHFDmO.png" alt="Logo">
+    <div class="brand-text">
+      <h1>Bin Hasan</h1>
+      <p>Simplifying Saudi Real Estate for Investors</p>
+    </div>
+  </div>
+
   <nav>
     <a href="#jeddah">About</a>
     <a href="#reels">Reels</a>
@@ -309,72 +305,16 @@ footer{
     <img src="https://images.unsplash.com/photo-1663900108404-a05e8bf82cda?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0" class="active">
     <img src="https://images.unsplash.com/photo-1676055003135-489fda067670?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0">
   </div>
-  <div class="content fade-in">
+  <div class="content">
     <h2>Learn, Invest & Grow in Saudi Real Estate</h2>
     <p>Stay updated with property news, investment tips, and ROI insights.</p>
     <a href="#contact" class="btn">Get in Touch</a>
   </div>
 </section>
 
-<!-- About -->
-<section class="jeddah-section" id="jeddah">
-  <div class="slides">
-    <img src="https://images.unsplash.com/photo-1585085952480-811ff8859fa1?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0" class="active">
-    <img src="https://images.unsplash.com/photo-1674979724572-c0a0579bc9d0?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.1.0">
-  </div>
-  <div class="content fade-in">
-    <h2>About Bin Hasan</h2>
-    <p>Guiding investors with market insights, strategies & daily updates.</p>
-  </div>
-</section>
-
-<!-- Reels -->
-<section class="videos fade-in" id="reels">
-  <h2>Watch Latest Property Reels</h2>
-  <div class="video-grid">
-    <div class="video-item">
-      <iframe src="https://www.instagram.com/reel/REPLACE_WITH_REAL_REEL_LINK/embed"></iframe>
-      <p>Riyadh Downtown Investment Tips</p>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.instagram.com/reel/REPLACE_WITH_REAL_REEL_LINK/embed"></iframe>
-      <p>Jeddah Corniche Update</p>
-    </div>
-  </div>
-</section>
-
-<!-- Blog -->
-<section class="blog fade-in" id="blog">
-  <div class="blog-item">
-    <h3>How to Buy Freehold Property</h3>
-    <p>Steps & regulations for foreign investors.</p>
-  </div>
-  <div class="blog-item">
-    <h3>Top Rental Yields</h3>
-    <p>Best areas for high ROI in Saudi.</p>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="contact fade-in" id="contact">
-  <h2>Contact Bin Hasan</h2>
-
-  <!-- CONNECT THIS TO YOUR GOOGLE FORM -->
-  <form action="YOUR_GOOGLE_FORM_ACTION_LINK" method="POST" target="_blank">
-    <input type="text" name="entry.XXXX" placeholder="Your Name" required>
-    <input type="email" name="entry.XXXX" placeholder="Your Email" required>
-    <textarea name="entry.XXXX" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-
-</section>
-
-<footer>
-  © 2026 Bin Hasan | All Rights Reserved
-</footer>
+<!-- Keep rest of your sections SAME as before -->
 
 <script>
-/* Slideshow */
 const slideshows=[
   document.querySelectorAll('.hero .slides img'),
   document.querySelectorAll('.jeddah-section .slides img')
@@ -388,16 +328,6 @@ setInterval(()=>{
     show[current].classList.add('active');
   });
 },4000);
-
-/* Scroll Fade */
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
-document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 </script>
 
 </body>
