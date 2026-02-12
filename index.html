@@ -3,25 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bin Hasan | Luxury Saudi Real Estate</title>
+<title>Bin Hasan | Saudi Real Estate</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* ================= GLOBAL ================= */
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
   scroll-behavior:smooth;
+  font-family:'Montserrat',sans-serif;
 }
 
 body{
   background:#000;
-  color:#d4af37;
-  font-family:'Montserrat',sans-serif;
+  color:#d4af37; /* Luxury Gold */
 }
 
 a{
@@ -34,44 +33,55 @@ a:hover{
   color:#f5d76e;
 }
 
+img{
+  max-width:100%;
+  display:block;
+}
+
 /* ================= HEADER ================= */
 
 header{
-  position:fixed;
-  width:100%;
+  position:sticky;
   top:0;
+  width:100%;
   z-index:1000;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 60px;
+  padding:20px 50px;
   background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(8px);
 }
 
-.logo-area{
+.logo-container{
   display:flex;
   align-items:center;
   gap:15px;
 }
 
-.logo-area img{
-  width:90px; /* Bigger logo */
+.logo-container img{
+  width:110px; /* Bigger logo */
 }
 
 .logo-text h1{
   font-family:'Playfair Display',serif;
-  font-size:2rem; /* Bigger name */
+  font-size:2.2rem; /* Bigger name */
   letter-spacing:1px;
+}
+
+.logo-text p{
+  font-size:0.9rem;
+  color:#f5d76e;
 }
 
 nav{
   display:flex;
-  gap:30px;
+  gap:25px;
 }
 
 nav a{
   font-weight:600;
+  padding:6px 12px;
   position:relative;
 }
 
@@ -90,40 +100,73 @@ nav a:hover::after{
   width:100%;
 }
 
-/* ================= SECTIONS ================= */
+/* ================= HERO & SLIDES ================= */
 
-section{
-  padding:120px 20px;
-  text-align:center;
-}
-
-.hero{
+.hero, .jeddah-section{
+  position:relative;
   height:100vh;
   display:flex;
-  justify-content:center;
   align-items:center;
-  flex-direction:column;
-  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-  url('https://images.unsplash.com/photo-1663900108404-a05e8bf82cda?q=80&w=1374&auto=format&fit=crop') center/cover no-repeat;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
 }
 
-.hero h2{
+.hero::before, .jeddah-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+  z-index:1;
+}
+
+.slides{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.slides img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1.5s ease-in-out, transform 6s ease;
+}
+
+.slides img.active{
+  opacity:1;
+  transform:scale(1.08);
+}
+
+.content{
+  position:relative;
+  z-index:2;
+  padding:0 20px;
+}
+
+.hero h2, .jeddah-section h2{
   font-family:'Playfair Display',serif;
   font-size:3rem;
   margin-bottom:20px;
+  text-shadow:2px 2px 12px rgba(0,0,0,0.9);
 }
 
-.hero p{
+.hero p, .jeddah-section p{
   max-width:700px;
+  margin:auto;
   margin-bottom:30px;
+  font-size:1.1rem;
 }
 
 .btn{
-  padding:15px 40px;
+  display:inline-block;
   background:#d4af37;
   color:#000;
-  font-weight:600;
+  padding:14px 35px;
   border-radius:5px;
+  font-weight:600;
   transition:.3s;
 }
 
@@ -131,27 +174,81 @@ section{
   background:#f5d76e;
 }
 
-/* ================= ABOUT ================= */
+/* ================= REELS ================= */
 
-.about{
-  background:#0a0a0a;
+.videos{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.videos h2{
+  margin-bottom:40px;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.video-item{
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(212,175,55,0.2);
+}
+
+.video-item iframe{
+  width:100%;
+  height:300px;
+}
+
+.video-item p{
+  padding:15px;
+  font-weight:600;
+}
+
+/* ================= BLOG ================= */
+
+.blog{
+  padding:80px 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.blog-item{
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  transition:.3s;
+}
+
+.blog-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 25px rgba(212,175,55,0.3);
 }
 
 /* ================= CONTACT ================= */
 
+.contact{
+  padding:80px 20px;
+  text-align:center;
+}
+
 .contact form{
-  max-width:500px;
-  margin:auto;
   display:flex;
   flex-direction:column;
   gap:15px;
+  max-width:500px;
+  margin:auto;
 }
 
 .contact input,
 .contact textarea{
   padding:12px;
-  background:#111;
   border:1px solid #d4af37;
+  background:#111;
   color:#d4af37;
   border-radius:5px;
 }
@@ -175,6 +272,7 @@ section{
 
 footer{
   padding:30px;
+  text-align:center;
   background:#000;
 }
 
@@ -191,15 +289,13 @@ footer{
   transform:translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media(max-width:768px){
   header{
     flex-direction:column;
     gap:15px;
   }
 
-  .hero h2{
+  .hero h2, .jeddah-section h2{
     font-size:2rem;
   }
 }
@@ -209,64 +305,91 @@ footer{
 <body>
 
 <header>
-  <div class="logo-area">
-    <img src="https://i.imgur.com/SzHFDmO.png" alt="Logo">
+  <div class="logo-container">
+    <img src="https://i.imgur.com/SzHFDmO.png">
     <div class="logo-text">
       <h1>Bin Hasan</h1>
+      <p>Simplifying Saudi Real Estate</p>
     </div>
   </div>
 
   <nav>
-    <a href="#about">About</a>
+    <a href="#jeddah">About</a>
+    <a href="#reels">Reels</a>
+    <a href="#blog">Guides</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section class="hero reveal">
-  <h2>Luxury Real Estate Insights in Saudi Arabia</h2>
-  <p>Guiding investors with premium property strategies, market intelligence and elite investment opportunities.</p>
-  <a href="#contact" class="btn">Get in Touch</a>
+<section class="hero">
+  <div class="slides">
+    <img src="https://images.unsplash.com/photo-1663900108404-a05e8bf82cda?q=80&w=1374&auto=format&fit=crop" class="active">
+    <img src="https://images.unsplash.com/photo-1676055003135-489fda067670?q=80&w=1335&auto=format&fit=crop">
+  </div>
+  <div class="content">
+    <h2>Learn, Invest & Grow in Saudi Real Estate</h2>
+    <p>Stay updated with property news, investment strategies, and ROI insights from top Saudi cities.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
 </section>
 
-<section class="about reveal" id="about">
-  <h2>About Bin Hasan</h2>
-  <p>Providing trusted guidance in Saudi real estate with market expertise and strategic investment advisory.</p>
+<section class="jeddah-section reveal" id="jeddah">
+  <div class="slides">
+    <img src="https://images.unsplash.com/photo-1585085952480-811ff8859fa1?q=80&w=1335&auto=format&fit=crop" class="active">
+    <img src="https://images.unsplash.com/photo-1674979724572-c0a0579bc9d0?q=80&w=1373&auto=format&fit=crop">
+  </div>
+  <div class="content">
+    <h2>About Bin Hasan</h2>
+    <p>Guiding investors in Saudi real estate with market insight and property strategies.</p>
+  </div>
 </section>
 
 <section class="contact reveal" id="contact">
   <h2>Contact Bin Hasan</h2>
 
-  <form action="https://formsubmit.co/binhasan005@gmail.com" method="POST">
+  <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
 
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-    <!-- Hidden settings -->
     <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New Luxury Website Lead">
-    <input type="hidden" name="_autoresponse" value="Thank you for contacting Bin Hasan. We will reach out to you shortly.">
+    <input type="hidden" name="_subject" value="New Website Lead - Bin Hasan">
+    <input type="hidden" name="_autoresponse" value="Thank you for contacting Bin Hasan. We will contact you shortly.">
 
     <button type="submit">Send Message</button>
+
   </form>
 </section>
 
 <footer>
-  &copy; 2026 Bin Hasan | Luxury Real Estate Advisory
+  &copy; 2026 Bin Hasan | All Rights Reserved
 </footer>
 
 <script>
 
-/* Scroll Reveal Animation */
+/* SLIDESHOW */
+const slideshows = document.querySelectorAll('.slides');
+
+slideshows.forEach(slideshow => {
+  const images = slideshow.querySelectorAll('img');
+  let index = 0;
+
+  setInterval(() => {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  }, 4000);
+});
+
+/* SCROLL REVEAL */
 const reveals = document.querySelectorAll('.reveal');
 
 window.addEventListener('scroll', () => {
   reveals.forEach(reveal => {
     const windowHeight = window.innerHeight;
     const revealTop = reveal.getBoundingClientRect().top;
-    const revealPoint = 100;
-
-    if(revealTop < windowHeight - revealPoint){
+    if(revealTop < windowHeight - 100){
       reveal.classList.add('active');
     }
   });
@@ -276,4 +399,3 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
-
